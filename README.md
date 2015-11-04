@@ -1,6 +1,23 @@
 That: Python Hidden Code
 ========================
 
+
+Table of Contents
+-----------------
+
+- [Easter Eggs](https://github.com/mahanmarwat/that#easter-eggs)
+- [Geek](https://github.com/mahanmarwat/that#geek)
+- [Idioms](https://github.com/mahanmarwat/that#idioms)
+- [Less Known Feature](https://github.com/mahanmarwat/that#less-known-feature)
+- [Don't Do It](https://github.com/mahanmarwat/that#dont-do-it)
+- [Command Line](https://github.com/mahanmarwat/that#command-line)
+- [Extend Python](https://github.com/mahanmarwat/that#extend-python)
+- [One Liner](https://github.com/mahanmarwat/that#one-liner)
+- [Quotes](https://github.com/mahanmarwat/that#quotes)
+- [Jokes](https://github.com/mahanmarwat/that#jokes)
+- [Tools](https://github.com/mahanmarwat/that#tools)
+- [Guides](https://github.com/mahanmarwat/that#guides)
+
 Easter Eggs
 -----------
 
@@ -16,22 +33,16 @@ import this
 import antigravity
 ```
 
-#### 3. Braces in Python instead of Indentation
+#### 3. Braces for code block
 
 ```python
 import braces
 ```
 
-#### 4. Print `Hello world!` to stdout
+#### 4. Print `Hello world!` to `stdout`
 
 ```python
 import __hello__
-```
-
-or
-
-```python
-from __phello__ import spam
 ```
 
 Geek
@@ -64,7 +75,7 @@ y = x or 5 # if x is False, y will hold the default value 5.
 debug and log('debug message.') # if debug is True, then the message will be logged.
 ```
 
-#### 5. 
+#### 5.
 
 ```python
 status_headers[:] = [status, headers]
@@ -79,11 +90,11 @@ bottle.run(app, port=8891) #, debug=True, reloader=True)
 #### 7. Ellipses...
 
 ```python
-while ...: 
+while ...:
     print(hello)
 ```
 
-#### 8. No more zero `0000000`
+#### 8. No more zero `0000`
 
 You can use exponent instead of typing long number.
 
@@ -102,6 +113,40 @@ codecs.encode('abc', 'rot13') # or 'rot-13'
 #### 10. You can split the digit from string in encoding name on anything
 
 `utf8`, `utf-8` and `utf_8` and even `utf+_+8` is one thing.
+
+#### 11. Last result
+
+```python
+>>> 5 + 5
+>>> _
+10
+```
+This only works in interactive interpreter.
+
+#### 12. Accessing private properties
+
+```python
+class Hello:
+    __name = 'Python'
+Hello._Hello__name # accessing private property __name
+```
+
+Idioms
+------
+
+#### 1. Reversing a sequence
+
+```python
+greet = 'Hello'
+greet[::-1]
+```
+
+#### 2. Removing duplicate
+
+```python
+nums = [1, 2, 2, 3]
+set(nums)
+```
 
 Less Known Feature
 ------------------
@@ -155,6 +200,16 @@ else:
 new_str_type = type('new_str_type', (str,), {})
 ```
 
+#### 7. `*args` and `**kwargs`
+
+```python
+list = [1, 2]
+dict = {'name': 'hello'}
+def hello(one, two, name=None):
+	pass
+hello(*list, **dict)
+```
+
 Don't Do It
 -----------
 
@@ -166,6 +221,30 @@ try:
 except: # instead use except TypeError:
 	pass
 ```
+
+#### 2. Always use `None` as default parameter
+
+```python
+def hello(items=[]):
+    items.append('hello')
+    return items
+first = hello()
+second = hello() # you expect here ['hello'] but you will get ['hello', 'hello']
+```
+
+To avoid this problem (bug) always use `None` as default parameter in function definition. i.e
+
+```python
+def hello(items=None):
+    if items is None:
+        items = []
+    items.append('hello')
+    return items
+first = hello()
+second = hello() # you expect here ['hello'] but you will get ['hello', 'hello']
+```
+
+Now you don't have the problem anymore.
 
 Command Line
 ------------
@@ -218,14 +297,17 @@ if x == 1:
 One Liner
 ---------
 
+
 Quotes
 ------
+
 
 Jokes
 -----
 
-Tool
-----
+
+Tools
+-----
 
 - pep8
 - flake8
@@ -235,4 +317,12 @@ Guides
 ------
 
 
-_______;
+Contributors
+------------
+
+
+
+License
+-------
+
+Licensed under [MIT](./LICENSE).
