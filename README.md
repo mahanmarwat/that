@@ -270,9 +270,9 @@ For options: `python -m "calendar" --help`
 #### 2. Starts a server
 
 ```bash
-python -m "http.server" --bind 127.0.0.1 8080
+python -m http.server --bind 127.0.0.1 8080
 ```
-For options: `python -m "http.server" --help`
+For options: `python -m http.server --help`
 
 Extend Python
 -------------
