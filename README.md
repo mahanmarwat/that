@@ -148,6 +148,16 @@ nums = [1, 2, 2, 3]
 set(nums)
 ```
 
+#### 3. Element with index
+
+```python
+list = ['hello', 'world']
+for index, value in enumerate(list):
+    print(index, value)
+# 1 hello
+# 2 world
+```
+
 Less Known Feature
 ------------------
 
@@ -280,6 +290,7 @@ multiline("""Hello, How are you?
              Hello, How are you?
              Hello, How are you?""") # the function will remove the indent.
 ```
+This one is fake yet.
 
 #### 3. `|` command-line piping with Pipe module
 
@@ -309,9 +320,13 @@ Jokes
 Tools
 -----
 
-- pep8
-- flake8
-- ipython
+#### 1. Interactive Python
+
+- [ipython](https://github.com/ipython/ipython)
+
+#### 2. Tool for installing Python packages
+
+- [pip](https://github.com/pypa/pip)
 
 Guides
 ------
