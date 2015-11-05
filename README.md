@@ -96,10 +96,10 @@ while ...:
 
 #### 8. No more zero `0000`
 
-You can use exponent instead of typing long number.
+You can use exponents instead of typing long floating point numbers.
 
 ```python
-total = 1e4 # 10000
+total = 1e4 # 10000.0
 ```
 
 #### 9. Rot13 cipher
