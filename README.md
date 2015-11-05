@@ -36,7 +36,7 @@ import antigravity
 #### 3. Braces for code block
 
 ```python
-import braces
+from __future__ import braces
 ```
 
 #### 4. Print `Hello world!` to `stdout`
