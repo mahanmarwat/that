@@ -148,6 +148,15 @@ nums = [1, 2, 2, 3]
 set(nums)
 ```
 
+This will produce an unordered set.
+
+To convert it back to a list you can do the following, although the order will still be lost:
+
+```python
+nums = [1, 2, 2, 3]
+list(set(nums))
+```
+
 #### 3. Element with index
 
 ```python
