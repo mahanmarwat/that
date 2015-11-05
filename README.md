@@ -232,17 +232,19 @@ except: # instead use except TypeError:
 	pass
 ```
 
-#### 2. Always use `None` as default parameter
+#### 2. Use `None` as default parameter
+
+Be careful: Mutable default parameters may not behave the way you think.
 
 ```python
 def hello(items=[]):
     items.append('hello')
     return items
 first = hello()
-second = hello() # you expect here ['hello'] but you will get ['hello', 'hello']
+second = hello() # you will get ['hello', 'hello'] here
 ```
 
-To avoid this problem (bug) always use `None` as default parameter in function definition. i.e
+If you expect a new object every time, use `None` as the default instead:
 
 ```python
 def hello(items=None):
@@ -251,10 +253,8 @@ def hello(items=None):
     items.append('hello')
     return items
 first = hello()
-second = hello() # you expect here ['hello'] but you will get ['hello', 'hello']
+second = hello() # now you get ['hello']
 ```
-
-Now you don't have the problem anymore.
 
 Command Line
 ------------
